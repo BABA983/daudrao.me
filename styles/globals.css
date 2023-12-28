@@ -25,3 +25,19 @@ body {
     )
     rgb(var(--background-start-rgb));
 }
+
+@layer base {
+  article :where(h1, h2, h3, h4, h5, h6) {
+    @apply flex mt-8 mb-5 font-semibold;
+    scroll-margin-top: 5rem;
+  }
+
+  a[href] {
+    height: max-content;
+    @apply px-1 font-light transition-colors duration-150 ease-linear rounded-sm;
+  }
+}
+
+/* ruby {
+  margin-left: 1rem;
+} */
