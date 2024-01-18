@@ -1,0 +1,4 @@
+.container {
+  box-shadow: inset 0 -1px 0 0 #eaeaea;
+  z-index: 1000;
+}
