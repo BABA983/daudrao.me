@@ -16,12 +16,47 @@
   }
 }
 
+* {
+  min-width: 0;
+}
+
 body {
   color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+  min-height: 100dvh;
+  font-family:
+    "Inter",
+    "Helvetica Neue",
+    -apple-system,
+    BlinkMacSystemFont,
+    Helvetica,
+    "Segoe UI",
+    Roboto,
+    Oxygen,
+    Ubuntu,
+    Cantarell,
+    "Fira Sans",
+    "Droid Sans",
+    "Microsoft Yahei",
+    sans-serif;
+  /* background: linear-gradient( */
+  /*     to bottom, */
+  /*     transparent, */
+  /*     rgb(var(--background-end-rgb)) */
+  /*   ) */
+  /*   rgb(var(--background-start-rgb)); */
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  @apply font-bold mb-1;
+  text-wrap: balance;
+}
+
+p {
+  @apply mb-4;
+  text-wrap: pretty;
 }
