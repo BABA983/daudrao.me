@@ -90,5 +90,16 @@ export function useMDXComponents(components: MDXComponents): MDXComponents {
     },
     // @ts-expect-error
     img: (props) => <Image {...props} />,
+    code: (props) => {
+      return <code className="inline-code" {...props} />;
+    },
+    pre: (props) => {
+      return (
+        <pre
+          className="border my-2 border-gray8 bg-gray3 px-4 py-3 rounded-md overflow-x-auto"
+          {...props}
+        />
+      );
+    },
   };
 }
