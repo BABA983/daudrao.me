@@ -3,6 +3,14 @@ import remarkGfm from "remark-gfm";
 import remarkFrontmatter from "remark-frontmatter";
 import remarkMdxFrontmatter from "remark-mdx-frontmatter";
 import remarkMdxImages from "remark-mdx-images";
+import rehypeMdxCodeProps from "rehype-mdx-code-props";
+import rehypePrettyCode from "rehype-pretty-code";
+
+/** @type {import('rehype-pretty-code').Options} */
+const options = {
+  // See Options section below.
+  theme: "vitesse-light",
+};
 
 const withMDX = mdx({
   options: {
@@ -14,7 +22,7 @@ const withMDX = mdx({
       // Next.js will automatically determine width and height if we statically imported image
       remarkMdxImages,
     ],
-    rehypePlugins: [],
+    rehypePlugins: [[rehypePrettyCode, options], rehypeMdxCodeProps],
   },
 });
 
