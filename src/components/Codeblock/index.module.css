@@ -1,0 +1,26 @@
+.container {
+  --code-fg: black;
+  --code-bg: #fff;
+  --code-string: #067a6e;
+  --code-tag: #fb7100;
+  --code-keyword: hsl(0 0% 43.5%);
+  --code-padding: 16px;
+  --radius: 8px;
+  font-family: var(--font-roboto-mono);
+  border-radius: 8px;
+  margin: 16px 0px;
+  overflow: hidden;
+  position: relative;
+  container-type: inline-size;
+  border: 1px solid hsl(0 0% 93%);
+}
+.editor {
+}
+.preview {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 240px;
+  padding: 16px;
+  background-color: hsl(0 0% 8.5%);
+}
