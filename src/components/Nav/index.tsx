@@ -7,6 +7,7 @@ import {
   useSelectedLayoutSegments,
 } from "next/navigation";
 import styles from "./index.module.css";
+import { Countdown } from "../Countdown";
 
 const routes = [
   { route: "/posts", title: "posts" },
@@ -18,10 +19,16 @@ function LocalTime() {
     timeZone: "Asia/Shanghai",
     hour: "numeric",
     minute: "numeric",
+    second: "numeric",
     weekday: "short",
     hour12: false,
   }).format();
-  return <span>{TimeFormatter}, 顺德</span>;
+  const [weekday] = TimeFormatter.split(" ");
+  return (
+    <span>
+      {weekday} <Countdown />, 顺德
+    </span>
+  );
 }
 
 export const Nav = () => {
@@ -38,13 +45,6 @@ export const Nav = () => {
           <LocalTime />
         </Link>
         <div className="flex items-center gap-5">
-          {/* {['/posts', '/art'].map((path) => (
-		  <Link key={path} href={path}>
-			<a className={`capitalize ${isActive(path) ? '' : 'opacity-50'}`}>
-			  {path.replace('/', '')}
-			</a>
-		  </Link>
-		))} */}
           {routes.map(({ route, title }) => (
             <Link
               key={route}
@@ -57,9 +57,6 @@ export const Nav = () => {
               {title}
             </Link>
           ))}
-          {/* <ThemeSwitch /> */}
-          {/* <RSSIcon /> */}
-          {/* <DocSearch /> */}
         </div>
       </nav>
     </header>

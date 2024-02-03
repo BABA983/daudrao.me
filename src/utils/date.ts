@@ -9,3 +9,15 @@ export function experienceDate(date: string) {
     return date;
   }
 }
+
+export function a11yDate(date: string) {
+  const d = new Date(date);
+  return `${d.getFullYear()}-${d.getMonth()}-${d.getDate()}`;
+}
+
+export function postListDate(date: string) {
+  return new Intl.DateTimeFormat("en-US", {
+    month: "short",
+    day: "2-digit",
+  }).format(new Date(date));
+}

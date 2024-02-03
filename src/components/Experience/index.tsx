@@ -1,4 +1,4 @@
-import { experienceDate } from "@/utils/date";
+import { a11yDate, experienceDate } from "@/utils/date";
 
 const experience = [
   {
@@ -46,11 +46,11 @@ export function Experience() {
               <div className="flex justify-between text-sm text-stone-600 dark:text-stone-400 ">
                 <div>{company}</div>
                 <div>
-                  <time dateTime={experienceDate(startDate)}>
+                  <time dateTime={a11yDate(startDate)}>
                     {experienceDate(startDate)}
                   </time>
                   {" - "}
-                  <time dateTime={experienceDate(endDate)}>
+                  <time dateTime={a11yDate(endDate)}>
                     {experienceDate(endDate)}
                   </time>
                 </div>
