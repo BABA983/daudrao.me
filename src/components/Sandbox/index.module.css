@@ -1,0 +1,6 @@
+.preview-container {
+  padding: 4px;
+}
+.preview-container iframe {
+  border-radius: 4px;
+}
