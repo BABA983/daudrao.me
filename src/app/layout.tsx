@@ -3,6 +3,7 @@ import { clsx } from "clsx";
 import "./globals.css";
 import { Nav } from "@/components/Nav";
 import localFont from "next/font/local";
+import { Analytics } from "@vercel/analytics/react";
 
 const font = localFont({
   src: [
@@ -34,6 +35,7 @@ export default function RootLayout({
             {children}
           </main>
         </div>
+        <Analytics />
       </body>
     </html>
   );
