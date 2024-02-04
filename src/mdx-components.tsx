@@ -26,7 +26,7 @@ export function useMDXComponents(components: MDXComponents): MDXComponents {
     a: ({ children, className = "", href = "", ref, ...props }) => {
       const isExternal = href.startsWith("http") || href.startsWith("https");
       const _className = clsx(
-        "border-b text-gray-600 border-gray-300 transition-[border-color] hover:border-gray-600 dark:text-white dark:border-gray-500 dark:hover:border-white",
+        "border-b text-gray-600 border-gray-300 transition-[border-color] hover:border-gray-600",
         className,
       );
       return isExternal ? (
@@ -49,7 +49,7 @@ export function useMDXComponents(components: MDXComponents): MDXComponents {
       );
     },
     h1: ({ children }) => (
-      <h1 className="text-2xl font-bold mb-1 dark:text-gray-100">{children}</h1>
+      <h1 className="text-2xl font-bold mb-1">{children}</h1>
     ),
     h2: ({ children }) => (
       <h2 className="group font-bold text-xl my-8 relative">{children}</h2>
@@ -83,7 +83,7 @@ export function useMDXComponents(components: MDXComponents): MDXComponents {
     },
     blockquote: ({ children }) => {
       return (
-        <blockquote className="my-5 text-gray-500 pl-3 border-l-4 dark:border-gray-600 dark:text-gray-400">
+        <blockquote className="my-5 text-gray-500 pl-3 border-l-4">
           {children}
         </blockquote>
       );

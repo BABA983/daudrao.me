@@ -14,6 +14,7 @@ const font = localFont({
     // { path: "../../public/hack-bolditalic-subset.woff2", weight: "500" },
   ],
   variable: "--ui-font",
+  display: "swap",
 });
 
 export const metadata: Metadata = {

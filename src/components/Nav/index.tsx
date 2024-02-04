@@ -36,7 +36,7 @@ export const Nav = () => {
   return (
     <header
       className={clsx(
-        "sticky top-0 h-20 w-full flex justify-between backdrop-blur-[20px] backdrop-saturate-150 bg-white/50 dark:bg-[#0D0D1050]",
+        "sticky top-0 h-20 w-full flex justify-between backdrop-blur-[20px] backdrop-saturate-150 bg-white/50",
         styles.container,
       )}
     >
