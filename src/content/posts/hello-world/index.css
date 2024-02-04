@@ -1,4 +1,5 @@
 .switchboard .light {
+  --colors-gray9: hsl(0 0% 56.1%);
   width: 1px;
   height: 1px;
   border-radius: 9999px;
