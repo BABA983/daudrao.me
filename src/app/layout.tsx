@@ -4,6 +4,7 @@ import "./globals.css";
 import { Nav } from "@/components/Nav";
 import localFont from "next/font/local";
 import { Analytics } from "@vercel/analytics/react";
+import { SpeedInsights } from "@vercel/speed-insights/next";
 
 const font = localFont({
   src: [
@@ -36,6 +37,7 @@ export default function RootLayout({
           </main>
         </div>
         <Analytics />
+        <SpeedInsights />
       </body>
     </html>
   );
