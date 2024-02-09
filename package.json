@@ -6,7 +6,9 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "prepare": "husky",
+    "lint:staged": "lint-staged"
   },
   "dependencies": {
     "@next/mdx": "^14.1.0",
@@ -28,6 +30,9 @@
     "autoprefixer": "^10.0.1",
     "eslint": "^8",
     "eslint-config-next": "14.1.0",
+    "gray-matter": "^4.0.3",
+    "husky": "^9.0.10",
+    "lint-staged": "^15.2.2",
     "postcss": "^8",
     "rehype-mdx-code-props": "^2.0.0",
     "rehype-pretty-code": "^0.12.6",
