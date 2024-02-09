@@ -1,6 +1,8 @@
 import { getAllPost, getPost } from '@/utils/mdx.server';
 import { notFound } from 'next/navigation';
 import { Metadata } from 'next';
+import { a11yDate, postFullDate } from '@/utils/date';
+import clsx from 'clsx';
 
 interface IProps {
   params: { slug: string };
@@ -18,7 +20,7 @@ export async function generateMetadata(props: IProps): Promise<Metadata> {
     title: post.frontmatter.title,
     description: post.frontmatter.description,
     authors: { name: 'BABA983', url: 'https://github.com/BABA983' },
-    // keywords: []
+    // keywords: post.frontmatter.keywords || [],
     openGraph: {
       title: post.frontmatter.title,
       description: post.frontmatter.description,
@@ -40,9 +42,26 @@ export async function generateMetadata(props: IProps): Promise<Metadata> {
 
 export default async function Page(props: IProps) {
   try {
-    const { default: Post } = await getPost(props.params.slug);
+    const { default: Post, frontmatter } = await getPost(props.params.slug);
     return (
       <article>
+        <h1>{frontmatter.title}</h1>
+        <p className="italic">{frontmatter.description}</p>
+        <div
+          className={clsx(
+            'flex flex-col text-sm mt-4 mb-8 uppercase font-thin text-gray-500',
+          )}
+        >
+          <time dateTime={a11yDate(frontmatter.publishedAt || '')}>
+            Published on {postFullDate(frontmatter.publishedAt || '')}
+          </time>
+          {a11yDate(frontmatter.updatedAt) !==
+            a11yDate(frontmatter.publishedAt || '') && (
+            <time dateTime={a11yDate(frontmatter.updatedAt)}>
+              Last updated on {postFullDate(frontmatter.updatedAt)}
+            </time>
+          )}
+        </div>
         <Post />
       </article>
     );

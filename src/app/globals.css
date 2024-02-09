@@ -6,6 +6,8 @@
   --foreground-rgb: 0, 0, 0;
   --background-start-rgb: 214, 219, 220;
   --background-end-rgb: 255, 255, 255;
+  --color-text: #31302e;
+  --color-heading-primary: #34384d;
 }
 
 /* @media (prefers-color-scheme: dark) { */
@@ -21,22 +23,22 @@
 }
 
 body {
-  color: rgb(var(--foreground-rgb));
+  color: var(--color-text);
   min-height: 100dvh;
   font-family:
     var(--ui-font),
-    "Helvetica Neue",
+    'Helvetica Neue',
     -apple-system,
     BlinkMacSystemFont,
     Helvetica,
-    "Segoe UI",
+    'Segoe UI',
     Roboto,
     Oxygen,
     Ubuntu,
     Cantarell,
-    "Fira Sans",
-    "Droid Sans",
-    "Microsoft Yahei",
+    'Fira Sans',
+    'Droid Sans',
+    'Microsoft Yahei',
     sans-serif;
   /* background: linear-gradient( */
   /*     to bottom, */
@@ -54,6 +56,7 @@ h5,
 h6 {
   @apply font-bold mb-1;
   text-wrap: balance;
+  color: var(--color-heading-primary);
 }
 
 h1 {
