@@ -1,29 +1,30 @@
-"use client";
-import clsx from "clsx";
-import Link from "next/link";
+'use client';
+import clsx from 'clsx';
+import Link from 'next/link';
 import {
   usePathname,
   useSelectedLayoutSegment,
   useSelectedLayoutSegments,
-} from "next/navigation";
-import styles from "./index.module.css";
-import { Countdown } from "../Countdown";
+} from 'next/navigation';
+import styles from './index.module.css';
+import { Countdown } from '../Countdown';
 
 const routes = [
-  { route: "/posts", title: "posts" },
+  { route: '/cv', title: 'CV' },
+  { route: '/posts', title: 'posts' },
   // { route: '/notes', title: 'notes' }
 ];
 
 function LocalTime() {
-  const TimeFormatter = new Intl.DateTimeFormat("en-US", {
-    timeZone: "Asia/Shanghai",
-    hour: "numeric",
-    minute: "numeric",
-    second: "numeric",
-    weekday: "short",
+  const TimeFormatter = new Intl.DateTimeFormat('en-US', {
+    timeZone: 'Asia/Shanghai',
+    hour: 'numeric',
+    minute: 'numeric',
+    second: 'numeric',
+    weekday: 'short',
     hour12: false,
   }).format();
-  const [weekday] = TimeFormatter.split(" ");
+  const [weekday] = TimeFormatter.split(' ');
   return (
     <span>
       {weekday} <Countdown />, 顺德
@@ -36,7 +37,8 @@ export const Nav = () => {
   return (
     <header
       className={clsx(
-        "sticky top-0 h-20 w-full flex justify-between backdrop-blur-[20px] backdrop-saturate-150 bg-white/50",
+        'sticky top-0 h-20 w-full flex justify-between backdrop-blur-[20px] backdrop-saturate-150 bg-white/50',
+        'print:hidden',
         styles.container,
       )}
     >
@@ -49,10 +51,9 @@ export const Nav = () => {
             <Link
               key={route}
               href={route}
-              className={clsx("capitalize", {
-                "opacity-50": segment !== title,
+              className={clsx('capitalize', {
+                'opacity-50': segment !== title.toLowerCase(),
               })}
-              //   onClick={resetTags}
             >
               {title}
             </Link>

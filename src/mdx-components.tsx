@@ -1,32 +1,17 @@
-import clsx from "clsx";
-import type { MDXComponents } from "mdx/types";
-import Image from "next/image";
-import Link from "next/link";
-
-function Arrow() {
-  return (
-    <svg
-      xmlns="http://www.w3.org/2000/svg"
-      width="14"
-      height="14"
-      viewBox="0 0 24 24"
-    >
-      <path
-        fill="currentColor"
-        d="m16.288 7.208l-9.765 9.746q-.14.14-.344.13q-.204-.009-.344-.15q-.14-.14-.14-.334t.14-.335L15.58 6.5H6.788q-.212 0-.356-.144t-.144-.357t.144-.356q.144-.143.356-.143h9.693q.343 0 .575.232q.232.232.232.576V16q0 .213-.143.356t-.357.144q-.213 0-.356-.144T16.288 16z"
-      />
-    </svg>
-  );
-}
+import clsx from 'clsx';
+import type { MDXComponents } from 'mdx/types';
+import Image from 'next/image';
+import Link from 'next/link';
+import { ArrowOutwardIcon } from './components/Icons';
 
 export function useMDXComponents(components: MDXComponents): MDXComponents {
   return {
     ...components,
     // https://github.com/vercel/next.js/blob/9bdaf07233574b6a090c523d1be255549ba8bc92/test/development/acceptance-app/fixtures/app-hmr-changes/app/(post)/components/footnotes.tsx
-    a: ({ children, className = "", href = "", ref, ...props }) => {
-      const isExternal = href.startsWith("http") || href.startsWith("https");
+    a: ({ children, className = '', href = '', ref, ...props }) => {
+      const isExternal = href.startsWith('http') || href.startsWith('https');
       const _className = clsx(
-        "border-b text-gray-600 border-gray-300 transition-[border-color] hover:border-gray-600",
+        'border-b text-gray-600 border-gray-300 transition-[border-color] hover:border-gray-600',
         className,
       );
       return isExternal ? (
@@ -39,7 +24,7 @@ export function useMDXComponents(components: MDXComponents): MDXComponents {
         >
           {children}
           <span className="inline-flex">
-            <Arrow />
+            <ArrowOutwardIcon width={14} height={14} />
           </span>
         </Link>
       ) : (

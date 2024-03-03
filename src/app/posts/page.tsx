@@ -1,6 +1,6 @@
-import { a11yDate, postListDate } from "@/utils/date";
-import { getAllPost } from "@/utils/mdx.server";
-import Link from "next/link";
+import { a11yDate, postListDate } from '@/utils/date';
+import { getAllPost } from '@/utils/mdx.server';
+import Link from 'next/link';
 
 export default async function PostList() {
   const ALL_POSTS = await getAllPost();
@@ -45,13 +45,6 @@ export default async function PostList() {
           </div>
         );
       })}
-      {/* {ALL_POSTS.map((post) => { */}
-      {/*   return ( */}
-      {/*     <div key={post.frontmatter.title}> */}
-      {/*       <Link href={`/posts/${post.slug}`}>{post.frontmatter.title}</Link> */}
-      {/*     </div> */}
-      {/*   ); */}
-      {/* })} */}
     </section>
   );
 }
